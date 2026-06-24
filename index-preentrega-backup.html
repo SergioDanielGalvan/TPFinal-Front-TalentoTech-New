@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href = "./CSS/estilos.css" >
+    <link rel="stylesheet" href = "./CSS/sliderlogos.css" >
+    <link rel="stylesheet" href = "./CSS/slice.css" >
+    
+    <!-- 
+    <link rel="stylesheet" href = "../CSS/cabeceraypie.css" >
+    <link rel="stylesheet" href = "./CSS/index.css" >
+    -->
+    <script src="./JS/codigo.js"></script>
+    <title>Mundo Gaming</title>
+     <meta name="description" content="Práctica Pre-entrega - Front - 2026" >
+     <meta name="description" content="Profesor: Facundo Coronel" >
+    <style>
+        footer {
+            font-family: "Sofia", sans-serif;
+        }
+    </style>
+</head>
+<body onload = "Init() ">
+    <header>
+        <a href="./index.html" >
+            <img class = "imagenLogo" src = "./imagenes/logo.png" alt="Logo Sitio" >
+        </a>
+        <nav>
+            <ul id = "listamenu" >
+                <li><a href="./index.html" >Principal</a></li>
+                <li><a href="#">Productos</a>
+                    <ul>
+                        <li><a href="./Paginas/mothers.html" >Mothers</a></li>
+                        <li><a href="./Paginas/videocards.html" >VideoCards</a></li>
+                        <li><a href="./Paginas/gabinetes.html" >Gabinetes</a></li>
+                    </ul>
+                </li>
+                <li><a href="./Paginas/soporte.html" >Soporte</a></li>
+                <li><a href="./Paginas/contacto.html" >Contacto</a></li>
+                <li><a href="./Paginas/acerca.html" >Acerca</a></li>
+            </ul>
+            <div id = "menu-hamburguesa">
+                <input id = "menu__toggle" type = "checkbox" />
+                <label class = "menu__btn" for = "menu__toggle">
+                  <span></span>
+                </label>
+                <ul class = "menu__box">
+                    <li><a class = "menu__item" href="./index.html" >Principal</a></li>
+                    <li><a class = "menu__item" href="./Paginas/mothers.html" >Mothers</a></li>
+                    <li><a class = "menu__item" href="./Paginas/videocards.html" >VideoCards</a></li>
+                    <li><a class = "menu__item" href="./Paginas/gabinetes.html" >Gabinetes</a></li>
+                    <li><a class = "menu__item" href="./Paginas/soporte.html" >Soporte</a></li>
+                    <li><a class = "menu__item" href="./Paginas/contacto.html" >Contacto</a></li>
+                    <li><a class = "menu__item" href="./Paginas/acerca.html" >Acerca</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div id = "iconos" >
+            <a href="./Paginas/ingresar.html" >
+                <img class = "imagenLogin" src = "./imagenes/login2.png" alt = "Ingresar Sitio" >
+            </a>
+            <a href = "#">
+                <img class = "imagenBuscar" src = "./imagenes/search1.png" alt = "Buscar" >
+            </a>
+        </div>
+    </header>
+    <main>
+        <section id="banerLogos">
+            <div class="slider">
+                <div class="slide-track">
+                    <div class="slide">
+                        <img src="./imagenes/Logos/LogoThermaltake.png" alt="Logo Thermaltake" />
+                    </div>
+                    <div class="slide">
+                        <img src="./imagenes/Logos/LogoXfX.png" alt="Logo XfX" />
+                    </div>
+                    <div class="slidebanner">
+                        <img src="./imagenes/Logos/LogoAMD.png" alt="Logo AMD" />
+                    </div>
+                    <div class="slide">
+                        <img src="./imagenes/Logos/LogoIntel.png" alt="Logo Intel" />
+                    </div>
+                    <div class="slide">
+                        <img src="./imagenes/Logos/LogoGigabyte.png" alt="Logo Gigabyte" />
+                    </div>
+                    <div class="slide">
+                        <img src="./imagenes/Logos/LogoMSI.png" alt="Logo MSI" />
+                    </div>
+                    <div class="slide">
+                        <img src="./imagenes/Logos/LogoAsus.png" alt="Logo Asus" />
+                    </div>
+                    <div class="slide">
+                        <img src="./imagenes/Logos/LogonVidia.png" alt="Logo nVidia" />
+                    </div>
+                    <div class="slide">
+                        <img src="./imagenes/Logos/LogoEVGA.png" alt="Logo EVGA" />
+                    </div>
+                    <div class="slide">
+                        <img src="./imagenes/Logos/LogoROG.png" alt="Logo Republic Of Gamers" />
+                    </div>
+                    <div class="slide">
+                        <img src="./imagenes/Logos/LogoMSI2.png" alt="Logo MSI 2" />
+                    </div>
+                    <div class="slide">
+                        <img src="./imagenes/Logos/LogoWD.png" alt="Logo Western Digital" />
+                    </div>
+                    <div class="slide">
+                        <img src="./imagenes/Logos/LogoAlienWare.png" alt="Logo AlienWare" />
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id = "slide" >
+            <!--
+                <h1 id="titulo" >Mundo Gaming</h1>
+            -->
+            <div class="slide">
+                <div class="slide-inner">
+                    <input class="slide-open" type="radio" id="slide-1" name="slide" aria-hidden="true" hidden="" checked="checked">
+                    <div class="slide-item">
+                        <img src="./imagenes/slice1.jpg" alt="Imagen Mothers">
+                    </div>
+                    <input class="slide-open" type="radio" id="slide-2" name="slide" aria-hidden="true" hidden="">
+                    <div class="slide-item">
+                        <img src="./imagenes/slice2.jpg" alt="Imagen Tarjetas Graficas">
+                    </div>
+                    <input class="slide-open" type="radio" id="slide-3" name="slide" aria-hidden="true" hidden="">
+                    <div class="slide-item">
+                        <img src="./imagenes/slice3.jpg" alt="Imagen Gabinetes">
+                    </div>
+                    <label for="slide-3" class="slide-control prev control-1">‹</label>
+                    <label for="slide-2" class="slide-control next control-1">›</label>
+                    <label for="slide-1" class="slide-control prev control-2">‹</label>
+                    <label for="slide-3" class="slide-control next control-2">›</label>
+                    <label for="slide-2" class="slide-control prev control-3">‹</label>
+                    <label for="slide-1" class="slide-control next control-3">›</label>
+                    <ol class="slide-indicador">
+                        <li>
+                            <label for="slide-1" class="slide-circulo">•</label>
+                        </li>
+                        <li>
+                            <label for="slide-2" class="slide-circulo">•</label>
+                        </li>
+                        <li>
+                            <label for="slide-3" class="slide-circulo">•</label>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+        <h1 id="titulo" >Mundo Gaming</h1>
+        <section class="cards">
+            <div id = "mothers" class = "card" >
+                <h2>Placas Madre</h2>
+                <img src = "./imagenes/img1_2.jpg" alt = "Placa Madre">
+                <h3>Asus PRIME X570P Socket AM4</h3>
+                <ul id = "detallemother">
+                    <li>Socket: AMD AM4</li>
+                    <li>RAM: 4 bancos DDR4</li>
+                    <li>Discos: 6 SATA III, 2 M.2</li>
+                    <li>Formato: ATX</li>
+                    <li>RGB: Si</li>
+                </ul>
+                <input type = "button" name = "verMother" value = "Detalles" />
+            </div>
+            <div id = "videocards" class = "card" >
+                <h2>Tarjetas de Video</h2>
+                <img src = "./imagenes/img2_1.jpg" alt = "Tarjeta de Video">
+                <h3>Radeon RX 6800 XT</h3>
+                <ul id = "detallevideo">
+                    <li>Fabricante: Gigabyte</li>
+                    <li>RAM: 16 Gb. DDR6</li>
+                    <li>Refrigeració.n: Aire, 3 coolers</li>
+                    <li>Conector: PCI-E 16X 4 Gen.</li>
+                </ul>
+                <input type = "button" name = "verVideoCard" value = "Detalles" />
+            </div>
+        </section>
+        <section class = "cards">
+            <div id = "gabinetes" class = "card" >
+                <h2>Gabinetes</h2>
+                <img src = "./imagenes/chasis2.jpg" alt = "Gabinete Midtower">
+                <h3>Thermaltake Core P3 TG</h3>
+                <ul id = "detallegabinete">
+                    <li>Caja MidTower: AMD AM4</li>
+                    <li>Tipo: Gamer abierto</li>
+                    <li>Tapa Lateral: Vidrio templado</li>
+                    <li>VGA Tamaño: 450 mm.</li>
+                </ul>
+                <input type = "button" name = "verChasis" value = "Detalles" />
+            </div>
+            <div id = "Noticias" class = "card" >
+                <h2>Noticias</h2>
+                <details open>
+                    <summary class = "Sumario" >Filtración de AMD Navi 33: Nvidia Lovelace pierde la guerra de eficiencia contra RDNA 3</summary>
+                    <iframe width="640" height="360" src="https://www.youtube.com/embed/tefqiCaikGk" title="AMD Navi 33 Leak: Nvidia Lovelace loses the Efficiency War to RDNA 3" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <p>Según AMD, RDNA 3 pulverizará a NVidia en eficiencia. NAVI 33 tendrá buen rendimieento a buen precio.</p>
+                    <a href = "https://www.noticias3d.com/noticia.asp?idnoticia=88207" target = "_blank" >Fuente: Noticias 3D</a>
+                </details>
+                <details closed>
+                    <summary class = "Sumario" >La Intel ARC A770 y ARC A750 llegarán "MUY PRONTO".</summary>
+                    <p>En una entrevista concedida a PC Games Hardware y Digital Foundry, Tom Petersen y Ryan Shrout de Intel han confirmado que en el lanzamiento de las Arc Alchemist de escritorio habrá dos modelos.</p>
+                    <p>Petersen, además, confirmó que la Arc A770 estaría entre la RTX 3060 y la RTX 3060 Ti en cuanto a rendimiento. Sería más rápida que la Radeon RX 6600 XT. El rendimiento en trazado de rayos de las Arc Alchemist sería equiparable al de las NVIDIA Ampere, pero sin pretender llegar a las RTX 3070.</p>
+                    <p>El rendimiento de las Arc Alchemist no va a mejorar drásticamente de manera milagrosa. Lo que hay es lo que es, frame arriba o frame abajo. Lo que Intel va a hacer es ofrecer un precio competitivo para las series A.</p>
+                    <a href = "https://www.noticias3d.com/noticia.asp?idnoticia=89786" target = "_blank" >Fuente: Noticias 3D</a>
+                </details>
+                <details closed>
+                    <summary class = "Sumario" >NVIDIA destroza el mercado con sus tarjetas gráficas RTX 4090 y RTX 4080.</summary>
+                    <p>Después de dos años desde la presentación y lanzamiento de las RTX 30 o 3000, por fin NVIDIA ha presentado su nueva generación de tarjetas gráficas para gaming dentro de su familia GeForce. Esta vez bajo la arquitectura Ada Lovelace.</p>
+                    <p>La nueva arquitectura con nombre en clave Ada Lovelace se presenta con tres modelos iniciales:la RTX 4090 de 24 GB, la RTX 4080 de 16 GB y la RTX 4080 de 12 GB. Y con importantes novedades con las que quieren recortar más la distancia con sus rivales en cuanto a rendimiento, especialmente en lo que al trazado de rayos se refiere.</p>
+                    <a href = "https://hardzone.es/marcas/nvidia/rtx-4000-presentacion/" target = "_blank" >Fuente: Hardzone España</a>
+                </details>
+                <input type = "button" name="verNovedades" value = "Siguiente" />
+            </div>
+        </section>
+    </main>
+    <footer id = "piedepagina">
+        <div id = "seccionespie">
+            <section class = "seccionpie">
+                <h2>Sitio Web</h2>
+                <p><a href = "./index.html">Principal</a></p>
+                <p><a href = "./Paginas/soporte.html">Soporte</a></p>
+            </section>
+            <section class = "seccionpie">
+                <h2>Ayuda</h2>
+                <p><a href = "./Paginas/contacto.html">Contacto</a></p>
+                <address id="correo">Correo: </address>
+            </section>
+            <section class = "seccionpie">
+                <h2>Info</h2>
+                <address>
+                    <p>Ciudad Autónoma de Buenos Aires, Argentina</p>
+                </address>
+                <p>&copy; Derechos Reservados 2026</p>
+            </section>
+        </div>
+    </footer>
+</body>
+</html>

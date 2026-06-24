@@ -1,0 +1,212 @@
+/* ============================================================
+   productos-data.js  ·  Copia embebida del catálogo
+   ------------------------------------------------------------
+   Respaldo para cuando la página se abre con doble clic
+   (file://), donde el navegador bloquea fetch de archivos
+   locales. Servida por HTTP, la app usa datos/productos.json.
+   Fuente de verdad: datos/productos.json
+   ============================================================ */
+window.PRODUCTOS_FALLBACK = [
+  {
+    "id": "mb-x570s-master",
+    "titulo": "X570S AORUS MASTER",
+    "categoria": "Placas Madre",
+    "precio": 260,
+    "url": "https://www.aorus.com/es-ar/motherboards/x570s-aorus-master-rev-10/Key-Features",
+    "imagen": "imagenes/mother(1).jpg",
+    "specs": [
+      "Socket AMD AM4",
+      "Chipset X570",
+      "4 x DDR4 5400 (O.C.)",
+      "3 M.2 / 6 SATA III",
+      "RGB Fusion",
+      "ATX"
+    ],
+    "destacado": true
+  },
+  {
+    "id": "mb-z690-elite",
+    "titulo": "Z690 AORUS ELITE AX",
+    "categoria": "Placas Madre",
+    "precio": 345,
+    "url": "https://www.gigabyte.com/Motherboard/Z690-AORUS-ELITE-AX-rev-1x",
+    "imagen": "imagenes/mother(2).jpg",
+    "specs": [
+      "Socket Intel LGA1700 (Gen 12)",
+      "Chipset Z690",
+      "4 x DDR5 6000 (O.C.)",
+      "3 M.2 / 6 SATA III",
+      "Wi-Fi 6 AX",
+      "ATX"
+    ]
+  },
+  {
+    "id": "mb-x670e-xtreme",
+    "titulo": "X670E AORUS XTREME",
+    "categoria": "Placas Madre",
+    "precio": 355,
+    "url": "https://www.gigabyte.com/Motherboard/X670E-AORUS-XTREME-rev-1x",
+    "imagen": "imagenes/mother(3).jpg",
+    "specs": [
+      "Socket AMD AM5 (Zen 4)",
+      "Chipset X670E",
+      "4 x DDR5 5200",
+      "4 M.2 PCIe 5.0 / 6 SATA III",
+      "RGB Fusion",
+      "E-ATX"
+    ]
+  },
+  {
+    "id": "mb-z590-xtreme",
+    "titulo": "Z590 AORUS XTREME",
+    "categoria": "Placas Madre",
+    "precio": 315,
+    "url": "https://www.gigabyte.com/Motherboard/Z590-AORUS-XTREME-rev-10",
+    "imagen": "imagenes/mother(4).jpg",
+    "specs": [
+      "Socket Intel LGA1200 (Gen 11)",
+      "Chipset Z590",
+      "4 x DDR4 5400 (O.C.)",
+      "3 M.2 / 6 SATA III",
+      "RGB Fusion",
+      "E-ATX"
+    ]
+  },
+  {
+    "id": "gpu-rtx3090ti",
+    "titulo": "AORUS GeForce RTX 3090 Ti XTREME WATERFORCE 24G",
+    "categoria": "Tarjetas de Video",
+    "precio": 2160,
+    "url": "https://www.gigabyte.com/Graphics-Card/GV-N309TAORUSX-W-24GD/sp",
+    "imagen": "imagenes/video1.jpg",
+    "specs": [
+      "GPU GeForce RTX 3090 Ti",
+      "24 GB GDDR6X",
+      "Refrigeración líquida AIO",
+      "PCIe 4.0 x16",
+      "3x DisplayPort / 2x HDMI"
+    ]
+  },
+  {
+    "id": "gpu-rx6950xt",
+    "titulo": "AORUS Radeon RX 6950 XT XTREME WATERFORCE WB 16G",
+    "categoria": "Tarjetas de Video",
+    "precio": 980,
+    "url": "https://www.gigabyte.com/Graphics-Card/GV-R695XTAORUSX-WB-16GD",
+    "imagen": "imagenes/video2.jpg",
+    "specs": [
+      "GPU Radeon RX 6950 XT",
+      "16 GB GDDR6",
+      "Waterblock full cover",
+      "PCIe 4.0 x16",
+      "RGB Fusion"
+    ]
+  },
+  {
+    "id": "gpu-rtx3080ti",
+    "titulo": "AORUS GeForce RTX 3080 Ti XTREME WATERFORCE WB 12G",
+    "categoria": "Tarjetas de Video",
+    "precio": 650,
+    "url": "https://www.gigabyte.com/ar/Graphics-Card/GV-N308TAORUSX-WB-12GD/sp",
+    "imagen": "imagenes/video3.jpg",
+    "specs": [
+      "GPU GeForce RTX 3080 Ti",
+      "12 GB GDDR6X",
+      "Waterblock full cover",
+      "PCIe 4.0 x16",
+      "Ray Tracing"
+    ]
+  },
+  {
+    "id": "gpu-rx6800xt",
+    "titulo": "AORUS Radeon RX 6800 XT MASTER TYPE C 16G",
+    "categoria": "Tarjetas de Video",
+    "precio": 870,
+    "url": "https://www.gigabyte.com/Graphics-Card/GV-R68XTAORUS-M-16GC",
+    "imagen": "imagenes/video4.jpg",
+    "specs": [
+      "GPU Radeon RX 6800 XT",
+      "16 GB GDDR6",
+      "Triple ventilador WINDFORCE",
+      "Puerto USB-C",
+      "RGB Fusion"
+    ],
+    "destacado": true
+  },
+  {
+    "id": "case-core-p8",
+    "titulo": "Thermaltake Core P8 Tempered Glass Full Tower",
+    "categoria": "Gabinetes",
+    "precio": 190,
+    "url": "https://www.thermaltake.com/core-p8-tempered-glass-full-tower-chassis.html",
+    "imagen": "imagenes/chasis1.jpg",
+    "specs": [
+      "Full Tower",
+      "Vidrio templado en 3 lados",
+      "Montaje vertical de GPU",
+      "Soporte E-ATX",
+      "Panel modular"
+    ]
+  },
+  {
+    "id": "case-core-p3",
+    "titulo": "Thermaltake Core P3 TG Tempered Glass",
+    "categoria": "Gabinetes",
+    "precio": 420,
+    "url": "https://www.thermaltake.com/core-p3-tg.html",
+    "imagen": "imagenes/chasis2.jpg",
+    "specs": [
+      "Mid Tower abierto",
+      "Vidrio templado",
+      "Pared o escritorio",
+      "GPU hasta 450 mm",
+      "ATX"
+    ],
+    "destacado": true
+  },
+  {
+    "id": "case-distrocase-350p",
+    "titulo": "Thermaltake DistroCase 350P Mid Tower",
+    "categoria": "Gabinetes",
+    "precio": 560,
+    "url": "https://www.thermaltake.com/distrocasetm-350p-mid-tower-chassis.html",
+    "imagen": "imagenes/chasis6.jpg",
+    "specs": [
+      "Mid Tower",
+      "DistroPlate integrada",
+      "Refrigeración líquida custom",
+      "Vidrio templado",
+      "ARGB"
+    ]
+  },
+  {
+    "id": "case-divider-370",
+    "titulo": "Thermaltake Divider 370 TG Snow ARGB",
+    "categoria": "Gabinetes",
+    "precio": 130,
+    "url": "https://www.thermaltake.com/thermaltake-divider-370-tg-snow-argb-mid-tower-chassis.html",
+    "imagen": "imagenes/chasis4.jpg",
+    "specs": [
+      "Mid Tower",
+      "Edición Snow (blanco)",
+      "3 ventiladores ARGB",
+      "Vidrio templado",
+      "ATX"
+    ]
+  },
+  {
+    "id": "case-v200",
+    "titulo": "Thermaltake V200 Tempered Glass Edition",
+    "categoria": "Gabinetes",
+    "precio": 95,
+    "url": "https://www.thermaltake.com/v200-tempered-glass-edition.html",
+    "imagen": "imagenes/chasis7.jpg",
+    "specs": [
+      "Mid Tower",
+      "Vidrio templado",
+      "RGB frontal",
+      "Buen flujo de aire",
+      "ATX"
+    ]
+  }
+];

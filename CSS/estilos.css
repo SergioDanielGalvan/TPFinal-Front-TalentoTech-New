@@ -1,0 +1,1223 @@
+@import url('https://googleapis.com');
+
+* {
+    margin: 0px 0px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+:root {
+    --inputbackground: yellow;
+    --botonbackcolor: black;
+    --botonbackgroundcolor: white;
+ }
+
+/* Inicio Cabecera */
+
+header {
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    position: sticky;
+    top: 0px;
+    width: 99%;
+    height: 50px;
+    /* background-color: rgb(72, 93, 255); */
+    background: -webkit-linear-gradient(top right, rgb(168, 176, 237), rgb(32, 57, 250));
+    z-index: 20;
+}
+
+header #iconos a {
+    text-decoration: none
+}
+
+.imagenLogo {
+    width: 95px;
+    border-radius: 8px;
+    margin: 5px;
+    box-shadow: 3px 3px 3px black;
+    /*background: url('imagenes/logo.png') 0 0; */
+    cursor: pointer;
+}
+
+/* Genéricos */
+
+h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.section-card {
+    background: #1e1e2f;        /* fondo oscuro pero con algo de contraste */
+    border-radius: 24px;
+    padding: 2rem;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.section-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.5);
+}
+
+.support-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+/* Fin Genéricos */
+
+/* menuprincipal */
+
+#listamenu > li {
+    position: relative;
+    display: inline-block;
+    height: 35px;
+    padding: 15px 10px 0px 10px;
+    margin-right: 5px;
+}
+
+#listamenu li > ul {
+    display: none;
+    position: absolute;
+    top: 50px;
+    left: 0px;
+    background-color: #9FC8D9;
+    box-shadow: 3px 3px 5px rgba(100, 100, 100, 0.7);
+    border-radius: 0px 0px 5px 5px;
+    list-style: none;
+    z-index: 10;
+}
+
+#listamenu li > ul > li {
+    width: 120px;
+    height: 35px;
+    padding-top: 15px;
+    padding-left: 10px;
+}
+
+#listamenu li:hover ul {
+    display: block;
+}
+
+#listamenu a {
+    
+    color: #333333;
+    text-decoration: none;
+}
+
+#listamenu li:hover {
+    background-color: #6FACC6;
+}
+
+.imagenLogin {
+    width: 40px;
+    padding-right: 5px;
+}
+
+
+.imagenBuscar {
+    width: 40px;
+    padding-right: 5px;
+}
+
+/* Fin menuprincipal */
+
+/* Menu Hamburguesa */
+
+#menu__toggle {
+    opacity: 0;
+}
+
+#menu__toggle:checked + .menu__btn > span {
+    transform: rotate(45deg);
+}
+
+#menu__toggle:checked + .menu__btn > span::before {
+    top: 0;
+    transform: rotate(0deg);
+}
+
+#menu__toggle:checked + .menu__btn > span::after {
+    top: 0;
+    transform: rotate(90deg);
+}
+
+#menu__toggle:checked ~ .menu__box {
+    left: 0 !important;
+}
+
+.menu__btn {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    width: 26px;
+    height: 26px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.menu__btn > span, .menu__btn > span::before, .menu__btn > span::after {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: black;
+    /* background-color: #616161; */
+    transition-duration: .25s;
+}
+
+.menu__btn > span::before {
+    content: '';
+    top: -8px;
+}
+
+.menu__btn > span::after {
+    content: '';
+    top: 8px;
+}
+
+.menu__box {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 150px;
+    /*
+    height: 100%;
+    */
+    height: 300px;
+    margin: 0;
+    padding: 80px 0;
+    list-style: none;
+    background-color: rgb(79, 99, 250);
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, .5);
+    transition-duration: .25s;
+}
+
+.menu__item {
+    display: block;
+    padding: 12px 24px;
+    color: #333;
+    font: bold 16px Arial, sans-serif;
+    text-decoration: none;
+    transition-duration: .25s;
+}
+
+.menu__item:hover {
+    background-color: #CFD8DC;
+}
+
+/* Fin Menu Hamburguesa */
+
+#menu-hamburguesa {
+    display: none;
+}
+
+/* Tablet y Mobile */
+@media(max-width:800px) {
+    #menu-hamburguesa {
+        display: block;
+    }
+    #listamenu {
+        display:none 
+    }
+    .imagenLogo {
+        display: none;
+    }
+}
+
+/* Fin Cabecera */
+
+/* Secciones de Principal index.html */
+
+#titulo {
+    width: 90%;
+    position: relative;
+    padding: 0px 5px;
+    margin: 5px 5%;
+    text-align: center;
+    font-size: 27px;
+    color: rgb(54, 53, 53);
+    font-family: 'Open Sans', sans-serif;
+    z-index: 9;
+    text-shadow: 0px 2px 3px rgba(0, 0, 0, 0.83), 
+         -1px 0px 2px rgba(255, 255, 255, 0);
+}
+
+.cards {
+    display: flex;
+    justify-content:space-around;
+    width: 99%;
+    margin: 5px 5px;
+}
+
+.card {
+    border: 2px;
+    color: black;
+    border-style: none;
+    border-radius: 60px 0px 60px 0px;
+    box-shadow: rgb(8, 8, 8) 5px 5px 20px;
+    margin: 2% 3%;
+    width: 90%;
+}
+
+.card img {
+    border: 1px;
+    color: black;
+    border-style: none;
+    width: 90%;
+    margin: 0% 5%;
+}
+
+.card h2 {
+    font: bold 20px Arial, sans-serif;
+    color: #333333;
+    text-align: center;
+    padding-top: 10px;
+}
+
+.card h3 {
+    font: bold 16px Arial, sans-serif;
+    color: black;
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+.card li {
+    color: black;
+    list-style: none;
+    font: bold 12px Verdana, sans-seri;
+}
+
+.card:hover {
+    border-style: solid;
+    box-shadow: black 5px 5px 20px;
+}
+.card p {
+    color: black;
+    font: bold 10px Verdana, sans-seri;
+    padding: 0% 5%;
+    text-align:justify;
+}
+
+.card a {
+    color: blue;
+    font: bold 10px Verdana, sans-seri;
+    padding: 0% 5%;
+    text-align:justify;
+}
+
+.card details {
+    margin: 5%;
+}
+
+.card input {
+    color: black;
+    text-align: center;
+    width: 25%;
+    margin: 2% 37%;
+    border-radius: 5px 5px;
+}
+
+.card input:hover {
+    color: white;
+    background-color: #333333;
+    transition: all 1s ease-in;
+    cursor: pointer;
+}
+
+.Sumario {
+    color: black;
+    font: bold 12px Verdana, sans-seri;
+    text-align:justify;
+    padding: 0% 0%;
+}
+
+.card iframe {
+    color: black;
+    width: 100%;
+    margin: 2% 0%;
+    border-radius: 5px 10px;
+}
+
+/* Tablet y Mobile */
+@media(max-width:800px) {
+    .cards {
+        display: block;
+    }
+    .card {
+        width: 90%;
+    }
+}
+
+/* Fin Secciones de Principal index.html */
+
+/* Inicio Productos, (Mothers, Gabinewtes y VideoCards */
+
+#imagenTop {
+    position: relative;
+}
+
+#imagenTop img {
+    margin: 0% 0%;
+    width: 99%;
+}
+
+#imagenTop h1 {
+    position: absolute;
+    color: white;
+    margin: 6% 0px 0px 2%;
+    font: bold 180% Arial, sans-serif;
+}
+
+#seccionLista {
+    display: flex;
+    justify-content:flex-start;
+    flex-wrap: wrap;
+    align-content:flex-start;
+    width: 99%;
+    margin: 20px 5px;
+}
+
+#seccionLista div {
+    border: 2px;
+    color: black;
+    border-style: none;
+    border-radius: 60px 0px 60px 0px;
+    box-shadow: rgb(8, 8, 8) 5px 5px 20px;
+    width: 30%;
+    margin: 10px 20px;
+}
+
+#seccionLista div h2 {
+    font: bold 18px Arial, sans-serif;
+    color: #333333;
+    text-align: center;
+    margin: 20px 0px 10px 0px;
+}
+
+#seccionLista div p {
+    font: bold 12px Arial, sans-serif;
+    color: #333333;
+    text-align:justify;
+    margin: 0% 5%;
+}
+
+#seccionLista div img {
+    width: 90%;
+    margin: 10px 0px 0px 15px;
+    -webkit-transition: all 0.7s ease; 
+    -moz-transition: all 1s ease;
+}
+
+#seccionLista div ul {
+    list-style: none;
+}
+
+#seccionLista div ul li {
+    font: bold 12px Arial, sans-serif;
+    color: #333333;
+    text-align:justify;
+    margin: 0% 5%;
+}
+
+#seccionLista div input {
+    color: black;
+    text-align: center;
+    width: 80px;
+    margin: 2% 37%;
+    border-radius: 5px 5px;
+}
+
+#seccionLista div:hover {
+    border-style: solid;
+    box-shadow: black 5px 5px 20px;
+}
+
+#seccionLista div input:hover {
+    color: white;
+    background-color: #333333;
+    cursor: pointer;
+    transition: all 1s ease-in;
+}
+
+#seccionLista div img:hover {
+    -webkit-transform: rotate(-3deg); -moz-transform: rotate(-3deg);
+    -webkit-box-shadow: 0 3px 10px #666; -moz-box-shadow: 0 3px 10px #666;
+}
+  
+ #seccionLista div img:focus {
+    outline: none;
+    /*
+    -webkit-transform: rotate(-3deg) scale(2.5);
+    -moz-transform: rotate(-3deg) scale(2.5);
+    -webkit-box-shadow: 0 3px 10px #666; -moz-box-shadow: 0 3px 10px #666;
+    */
+    z-index: 9999;
+}
+
+#multimedia div video {
+    position: relative;
+    right: 0;
+    bottom: 0;
+    width: 98%;
+    margin: 10px 10px;
+}
+
+#multimediatitulo  {
+    width: 98%;
+    height: 5px;
+    padding: 0 5px;
+}
+
+#multimedia div h2 {
+    position: relative;
+    top: 35px;
+    left: 30px;
+    border: 2px;
+    border-style: solid;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.6);
+    width: 30%;
+    text-align: center;
+    color: antiquewhite;
+    z-index: 50;
+}
+
+/* Tablet y Mobile */
+@media(max-width:1200px) {
+    #seccionLista div {
+        margin: 5px 10px;
+        width: 45%;
+        border-radius: 30px 0px 30px 0px;
+    }
+}
+
+@media(max-width:700px) {
+    #seccionLista {
+        clear: both;
+        display: inline-block;
+        border-radius: 10px 0px 10px 0px;
+    }
+
+    #seccionLista div {
+        margin: 0px 0px;
+        width: 95%;
+    }
+}
+
+/* Fin Productos, (Mothers, Gabinetes y VideoCards */
+
+/* Inicio Página Soporte */
+
+#soporte {
+    width: 98%;
+    margin-top: 5px;
+    align-content: center;
+}
+ 
+#formDatosSoporte {
+    display: inline-block;
+    align-content: center;
+    width: 450px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: calc((100% - 450px)/2);
+    padding-left: 10px;
+    text-align: left;
+    border-color: black;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 24px;
+    box-shadow: rgb(8, 8, 8) 5px 5px 20px;
+    background-color: rgb(55, 109, 246);
+}
+ 
+#formDatosSoporte h1 {
+    text-align: center;
+    color: black;
+    margin: 20px 20px;
+    font: bold 24px;
+}
+ 
+#formDatosSoporte h3 {
+    text-align: center;
+    color: black;
+    margin: 10px 20px;
+    font: 14px;
+}
+ 
+.labelSoporte {
+    display: inline-block;
+    color: black;
+    width: 200px;
+    padding-top: 5px;
+}
+ 
+.input_soporte {
+    display: block;
+    color: black;
+    width: 10rem;
+}
+ 
+.input_soporte:focus {
+    background-color: var(--inputbackground);
+    border-width: 2px;
+    font: black;
+}
+ 
+ .textarea_soporte {
+    display: block;
+    height: 5rem;
+    width: 95%;
+}
+ 
+.textarea_soporte:focus {
+    background-color: var(--inputbackground);
+    border-width: 2px;
+    font: black;
+}
+ 
+#botonesSoporte {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+ 
+#botonesSoporte input {
+    margin: 0px 5px;
+    width: 100px;
+    color: var(--botonbackcolor);
+    background-color: var(--botonbackgroundcolor);
+    border-style: solid;
+    border-radius: 5px;
+}
+ 
+#botonesSoporte input:hover {
+    background-color: var(--botonbackcolor);
+    color: var(--botonbackgroundcolor);
+    cursor: pointer;
+    transition: all 1s ease-in;
+    border-color: white;
+}
+ 
+.imagezoom {
+    width: 660px;
+    margin: 60px auto;
+}
+ 
+.group:after { visibility: hidden; display: block; font-size: 0; content: " "; clear: both; height: 0; }
+ 
+.test { margin: 20px 0 25px 0; }
+ 
+.test figure { 
+    width: 240px; 
+    float: left; 
+    margin: 0 20px 0 0; 
+    background: white;
+    border: 10px solid white; 
+ }
+ 
+ .test figcaption { 
+    text-align: center; 
+    display: block; 
+    font-size: 14px; 
+    font-style: italic; 
+ }
+   
+.test figure img { 
+   width: 100%; /* Scale down */
+}
+ 
+.test figure:hover {
+    -webkit-transform: rotate(-3deg); -moz-transform: rotate(-3deg);
+    -webkit-box-shadow: 0 3px 10px #666; -moz-box-shadow: 0 3px 10px #666;
+}
+ 
+.test figure:focus {
+    outline: none;
+    -webkit-transform: rotate(-3deg); -moz-transform: rotate(-3deg);
+    -webkit-box-shadow: 0 3px 10px #666;
+    -moz-box-shadow: 0 3px 10px #666;
+    -webkit-transform: rotate(-3deg) scale(2.5);
+    -moz-transform: rotate(-3deg) scale(2.5);
+    -webkit-box-shadow: 0 3px 10px #666; -moz-box-shadow: 0 3px 10px #666;
+    z-index: 9999;
+}
+ 
+/* Test de efectos de botones */
+  #botonestest {
+    clear: both;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+   }
+ 
+.botonTest {
+    width: 200px;
+    height: 30px;
+    color: black;
+    border-width:  3px;
+    border-style: solid;
+    border-color: black;
+    background-color: white;
+    box-shadow: black 5px 5px 20px;
+}
+ 
+.botonTest:hover {
+    cursor: pointer;
+    color: white;
+    background-color: rgb(62, 61, 61);
+    animation: testbotones 3s ease-in;
+}
+ 
+@keyframes testbotones {
+    0% {
+        border-color: black;
+    }
+    25% {
+       border-left: white;
+    }
+    50% {
+       border-left: white;
+       border-bottom: white;
+    }
+    75% {
+       border-left: white;
+       border-bottom: white;
+       border-right: white;
+    }
+    100% {
+       border: white;
+    }
+}
+
+/* Fin Página Soporte */
+
+/* Inicio Página Contacto */
+
+#Contacto {
+    width: 98%;
+    margin-top: 5px;
+}
+
+#formContacto {
+    display: inline-block;
+    align-content: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: calc((100% - 450px)/2);
+    width: 450px;
+    /*
+    width: 450%;
+    margin: 10px 0px 10px 33%;
+    */
+    border-radius: 24px;
+    background-color: rgb(55, 109, 246);
+    padding-left: 10px;
+    text-align: left;
+    border-color: black;
+    border-style: solid;
+    border-width: 1px;
+    box-shadow: rgb(8, 8, 8) 5px 5px 20px;
+
+}
+
+#formContacto h3 {
+    text-align: center;
+    color: black;
+    margin: 20px 0px;
+    height: 30px;
+}
+
+.labelContacto {
+    display: inline-block;
+    color: black;
+    width: 200px;
+    padding-top: 5px;
+}
+
+.input_contacto {
+    display: block;
+    justify-content: flex-start;
+    color: black;
+    width: 10rem;
+}
+
+.input_contacto:focus {
+    background-color: yellow;
+    border-width: 2px;
+    font: black;
+}
+
+.input_contacto:hover {
+    border-width: 2px;
+    color: black;
+}
+
+/*
+.input_contacto:valid{
+    background: #EEEEFF;
+}
+.input_contacto:invalid{
+    background: #ba2e2e;
+}
+*/
+
+.textarea_contacto {
+    display: block;
+    height: 5rem;
+    width: 95%;
+}
+
+.textarea_contacto:focus {
+    background-color: yellow;
+    border-width: 2px;
+    color: black;
+}
+
+.textarea_contacto:hover {
+    border-width: 2px;
+    color: black;
+}
+
+#botonesContacto {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+ }
+
+.botonContacto {
+    color: black;
+    background-color: white;
+    padding: 5px 10px;
+    border-color: black;
+    border-style: solid;
+    border-radius: 5px;
+    margin: 15px 15px 10px 0px;
+    text-align: center;
+}
+
+.botonContacto:hover {
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    transition: all 1s ease-in;
+    border-color: white;
+}
+
+/* Fin Página Contacto */
+
+/* Inicio Página Registrarse */
+
+#Registrarse {
+    width: 98%;
+    border-color: black;
+    border-style: solid;
+    border-width: 3px;
+    border-radius: 20px / 10px;
+    box-shadow: rgb(8, 8, 8) 5px 5px 20px;
+ }
+ 
+#formRegistrarse {
+    display: inline-block;
+    align-content: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: calc((100% - 450px)/2);
+    width: 450px;
+    /*
+    width: 450%;
+    margin: 10px 0px 10px 33%;
+    width: 33%;
+    margin: 10px 0px;
+    margin-left: 33%;
+    */
+    padding-left: 10px;
+    text-align: left;
+    border-color: black;
+    border-style: solid;
+    border-width: 1px;
+    box-shadow: rgb(8, 8, 8) 5px 5px 20px;
+    background-color: rgb(55, 109, 246);
+}
+
+#formRegistrarse h3 {
+    text-align: center;
+    color: black;
+}
+
+.labelRegistrarse {
+    display: inline-block;
+    color: black;
+    width: 95px;
+    padding-top: 5px;
+}
+
+.input_registrarse {
+    display: block;
+    color: black;
+}
+
+.input_registrarse:focus {
+    background-color: var(--inputbackground);
+    border-width: 2px;
+    font: black;
+}
+
+#botonesRegistrarse {
+    display: flex;
+    justify-content: space-around;
+}
+
+.botonRegistrarse {
+    width: 100px;
+    color: var(--botonbackcolor);
+    background-color: var(--botonbackgroundcolor);
+    padding: 5px 10px;
+    border-color: black;
+    border-style: solid;
+    border-radius: 5px;
+    margin: 15px 15px 10px 0px;
+    text-align: center;
+}
+
+.botonRegistrarse:hover {
+    background-color: var(--botonbackcolor);
+    color: var(--botonbackgroundcolor);
+    cursor: pointer;
+    transition: all 1s ease-in;
+    border-color: white;
+}
+
+/* Fin Página Registrarse */
+
+/* Inicio Página Ingresar */
+
+#Ingresar {
+    width: 98%;
+    border-color: black;
+    border-style: solid;
+    border-width: 3px;
+    border-radius: 20px / 10px;
+    box-shadow: rgb(8, 8, 8) 5px 5px 20px;
+ }
+
+#formIngresar {
+    display: inline-block;
+    align-content: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: calc((100% - 450px)/2);
+    width: 450px;
+    /*
+    width: 33%;
+    margin: 10px 0px;
+    margin-left: 33%;
+    */
+    padding-left: 10px;
+    text-align: left;
+    border-color: black;
+    border-style: solid;
+    border-width: 1px;
+    box-shadow: rgb(8, 8, 8) 5px 5px 20px;
+    background-color: rgb(55, 109, 246);
+}
+
+#formIngresar h3 {
+    text-align: center;
+    color: black;
+}
+
+.labelIngresar {
+    display: inline-block;
+    color: black;
+    width: 95px;
+    padding-top: 5px;
+}
+
+.input_ingresar {
+    display: block;
+    color: black;
+}
+
+.input_ingresar:focus {
+    background-color: var(--inputbackground);
+    border-width: 2px;
+    font: black;
+}
+
+#botonesIngresar {
+    display: flex;
+    align-content: center;
+    justify-content: space-around;
+}
+
+.botonIngresar {
+    width: 100px;
+    color: var(--botonbackcolor);
+    background-color: var(--botonbackgroundcolor);
+    padding: 5px 10px;
+    border-color: black;
+    border-style: solid;
+    border-radius: 5px;
+    margin: 15px 15px 10px 0px;
+    text-align: center;
+}
+
+.botonIngresar:hover {
+    background-color: var(--botonbackcolor);
+    color: var(--botonbackgroundcolor);
+    cursor: pointer;
+    transition: all 1s ease-in;
+    border-color: white;
+}
+
+/* Fin Página Ingresar */
+
+/* Inicio Página Acerca */
+
+#cuerpo {
+    display: flex;
+    justify-content: space-around; 
+    width: 96%;
+    margin: 5px 20px;
+}
+
+#datosacerca {
+    width: 45%;
+    margin: 25px 5px;
+    border: 1px;
+    border-style: none;
+    border-color: black;
+}
+
+#datosacerca img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+}
+
+#datosacerca h2 {
+    text-align: center;
+    color: black;
+    margin: 40px 20px;
+    text-decoration-line: underline;
+}
+
+#textoacerca {
+    margin: 40px 20px;
+    text-align: justify;
+    color: black;
+    text-shadow: 0px 2px 3px rgba(0, 0, 0, 0.83), -1px 0px 2px rgba(255, 255, 255, 0);
+}
+
+#datosacerca p {
+    text-align:justify;
+    color: black;
+    margin: 40px 20px;
+}
+
+#map {
+    width: 45%;
+    margin: 25px 5px;
+    border: 1px;
+    border-style: none;
+    border-color: black;
+}
+
+#areamap {
+    display: block;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#TextoTop {
+    width: 90%;
+    position: relative;
+    padding: 0px 5px;
+    margin: 5px 5%;
+    text-align: center;
+    font-size: 17px;
+    color: rgb(54, 53, 53);
+    font-family: 'Open Sans', sans-serif;
+    z-index: 9;
+    text-shadow: 0px 2px 3px rgba(0, 0, 0, 0.83), 
+         -1px 0px 2px rgba(255, 255, 255, 0);
+}
+
+#seccionListaDesarrolladores {
+    display: flex;
+    justify-content:flex-start;
+    flex-wrap: wrap;
+    align-content:flex-start;
+    width: 90%;
+    margin: 20px 5px;
+}
+
+#seccionListaDesarrolladores div {
+    border: 2px;
+    color: black;
+    border-style: none;
+    border-radius: 60px 0px 60px 0px;
+    box-shadow: rgb(8, 8, 8) 5px 5px 20px;
+    width: 30%;
+    margin: 10px 20px;
+}
+
+#seccionListaDesarrolladores div h2 {
+    font: bold 18px Arial, sans-serif;
+    color: #333333;
+    text-align: center;
+    margin: 20px 0px 10px 0px;
+}
+
+#seccionListaDesarrolladores div p {
+    font: bold 12px Arial, sans-serif;
+    color: #333333;
+    text-align:justify;
+    margin: 0% 5%;
+}
+
+#seccionListaDesarrolladores div img {
+    width: 70%;
+    margin: 20px 0px 0px 10px;
+    -webkit-transition: all 0.7s ease; 
+    -moz-transition: all 1s ease;
+}
+
+#seccionDesarrolladores div ul {
+    list-style: none;
+}
+
+#seccionListaDesarrolladores div ul li {
+    font: bold 12px Arial, sans-serif;
+    color: #333333;
+    text-align:justify;
+    margin: 0% 5%;
+}
+
+#seccionListaDesarrolladores div input {
+    color: black;
+    text-align: center;
+    width: 80px;
+    margin: 2% 37%;
+    border-radius: 5px 5px;
+}
+
+#seccionListaDesarrolladores div:hover {
+    border-style: solid;
+    box-shadow: black 5px 5px 20px;
+}
+
+#seccionListaDesarrolladores div input:hover {
+    color: white;
+    background-color: #333333;
+    cursor: pointer;
+    transition: all 1s ease-in;
+}
+
+#seccionListaDesarrolladores div img:hover {
+    -webkit-transform: rotate(-3deg); -moz-transform: rotate(-3deg);
+    -webkit-box-shadow: 0 3px 10px #666; -moz-box-shadow: 0 3px 10px #666;
+}
+  
+ #seccionListaDesarrolladores div img:focus {
+    outline: none;
+    /*
+    -webkit-transform: rotate(-3deg) scale(2.5);
+    -moz-transform: rotate(-3deg) scale(2.5);
+    -webkit-box-shadow: 0 3px 10px #666; -moz-box-shadow: 0 3px 10px #666;
+    */
+    z-index: 9999;
+}
+
+@media(max-width:700px) {
+    #cuerpo {
+        clear: both;
+        display: block;
+    }
+    #datosacerca {
+        width: 90%;  
+    }
+
+    #map {
+        width: 90%;  
+    }
+}
+
+/* Fin Página Acerca */
+
+/* Inicio Footer */
+
+#piedepagina {
+    width: 97%;
+    padding: 1%;
+    background-color: #0F76A0;
+    font-family: "Open Sans", sans-serif;
+}
+
+#piedepagina div {
+    width: 95%;
+    margin: 0px auto;
+    background-color: #07648b;
+    border-radius: 10px;
+}
+
+#piedepagina h2 {
+    font: bold 16px Arial, sans-serif;
+    color: black;
+}
+
+#seccionespie {
+    display: flex;
+    justify-content:space-around;
+}
+
+.seccionpie {
+    float: left;
+    width: 270px;
+    padding: 15px 25px;
+ }
+
+.seccionpie p {
+    margin-top: 5px;
+    color: black;
+    font: bold 12px Arial, sans-serif;
+ }
+
+ .seccionpie a {
+    font: bold 12px Arial, sans-serif;
+    color: blue;
+    text-decoration: none;
+ }
+
+ #correo {
+    color: black;
+    font: bold 12px Arial, sans-serif;
+ }
+
+ #telefono {
+    color: black;
+    font: bold 12px Arial, sans-serif;
+ }
+
+ #correo::after {
+    content: "info\40 mundogaming.com.ar";
+ }
+
+ #telefono::after {
+    content: " +54 11 1234-5678";
+ }
+
+
+ /* Fin Footer */

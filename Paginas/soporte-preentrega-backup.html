@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href = "../CSS/estilos.css" >
+    <!-- 
+    <link rel="stylesheet" href = "../CSS/cabeceraypie.css" >
+    <link rel="stylesheet" href = "../CSS/soporte.css" >
+    -->
+    <title>Mundo Gaming</title>
+</head>
+<body>
+    <header>
+        <a href="../index.html">
+            <img class = "imagenLogo" src = "../imagenes/logo.png" alt = "Logo Sitio" >
+        </a>
+        <nav>
+            <ul id = "listamenu" >
+                <li><a href="../index.html" >Principal</a></li>
+                <li><a href="#">Productos</a>
+                    <ul>
+                        <li><a href="../Paginas/mothers.html" >Mothers</a></li>
+                        <li><a href="../Paginas/videocards.html" >VideoCards</a></li>
+                        <li><a href="../Paginas/gabinetes.html" >Gabinetes</a></li>
+                    </ul>
+                </li>
+                <li><a href="../Paginas/soporte.html" >Soporte</a></li>
+                <li><a href="../Paginas/contacto.html" >Contacto</a></li>
+                <li><a href="../Paginas/acerca.html" >Acerca</a></li>
+            </ul>
+            <div id = "menu-hamburguesa">
+                <input id = "menu__toggle" type = "checkbox" />
+                <label class = "menu__btn" for = "menu__toggle">
+                  <span></span>
+                </label>
+                <ul class = "menu__box">
+                    <li><a class = "menu__item" href="../index.html" >Principal</a></li>
+                    <li><a class = "menu__item" href="../Paginas/mothers.html" >Mothers</a></li>
+                    <li><a class = "menu__item" href="../Paginas/videocards.html" >VideoCards</a></li>
+                    <li><a class = "menu__item" href="../Paginas/gabinetes.html" >Gabinetes</a></li>
+                    <li><a class = "menu__item" href="../Paginas/soporte.html" >Soporte</a></li>
+                    <li><a class = "menu__item" href="../Paginas/contacto.html" >Contacto</a></li>
+                    <li><a class = "menu__item" href="../Paginas/acerca.html" >Acerca</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div id = "iconos" >
+            <a href="./Paginas/ingresar.html" >
+                <img class = "imagenLogin" src = "../imagenes/login2.png" alt = "Ingresar Sitio" >
+            </a>
+            <a href = "#">
+                <img class = "imagenBuscar" src = "../imagenes/search1.png" alt = "Buscar" >
+            </a>
+        </div>
+    </header>
+    <main>
+        <section id = "soporte" >
+            <div class="section-card" >
+                <form id = "formDatosSoporte" name = "formSoporte" method = "post" action = "soporte.php">
+                    <h1>Soporte Técnico</h1>
+                    <h3>Información Personal</h3>
+                    <label for = "region">Indique una región:</label></br>
+                    <select id = "regiones" name = "region">
+                    <option value = "caba" selected>CABA</option>
+                    <option value = "gba">Gran Buenos Aires</option>
+                    <option value = "LaPlata">La Plata</option>
+                    <option value = "Rosario">Rosario</option>
+                    <option value = "Cordoba">Córdoba</option>
+                    <option value = "Mendoza">Mendoza</option>
+                    <option value = "Otros">Otros</option>
+                    </select></br>
+                    <label class = "labelSoporte" for="nombre">Nombre: </label>
+                    <input type = "text" class = "input_soporte" name = "nombre" maxlength = "60" placeholder = "Juan Pérez" required />
+                    <label class = "labelSoporte" for="correo">Correo: </label>
+                    <input type = "email" class = "input_soporte" name = "correo" maxlength = "60" placeholder = "juan@perez.com" required />
+                    <h3>Datos Producto</h3>
+                    <label class = "labelSoporte" for="nombreproducto">Nombre Producto: </label>
+                    <input type = "text" class = "input_soporte" name = "nombreproducto" maxlength = "60" placeholder = "Nombre en la factura" required />
+                    <label class = "labelSoporte" for="modeloproducto">Modelo Producto: </label>
+                    <input type = "text" class = "input_soporte" name = "modeloproducto" maxlength = "60" placeholder = "Código en la factura" required />
+                    <label class = "labelSoporte" for="serialnumberproducto">Nº de Serie Producto: </label>
+                    <input type = "text" class = "input_soporte" name = "serialnumberproducto" maxlength = "60" placeholder = "Nº Serial del producto"  required />
+                    <label class = "labelSoporte" for="mensaje">Descripción Problema: </label>
+                    <textarea type = "text" class = "textarea_soporte" name = "mensaje" maxlength = "300" placeholder="..." ></textarea>
+                    <h3>Datos Compra</h3>
+                    <label class="labelSoporte" for="fechacompra">Fecha de Compra:</label>
+                    <input type="date" class = "input_soporte" name="fechacompra" value="2022-09-12" min="2019-09-01" max="2022-09-31" required />
+                    <div id="botonesSoporte">
+                        <input type = "submit" class = "botonSoporte" />
+                        <input type = "reset" class = "botonSoporte" />
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <div class="imagezoom">
+            <section class="test group">
+                <h1>Expandiendo Imágenes</h1>
+                <figure tabindex="1" contenteditable="true" alt="image zoom">
+                    <img src="../imagenes/chasis4.jpg" alt="Core P8 Tempered Glass" contenteditable="false">
+                    <figcaption>Divider 370 TG Snow ARGB Mid Tower Chassis</figcaption>
+                </figure>
+                <figure tabindex="2" contenteditable="true" alt="image zoom">
+                    <img src="../imagenes/chasis2.jpg" alt="Core P8 Tempered Glass" contenteditable="false">
+                    <figcaption>Core P3 TG Tempered Glass Full</figcaption>
+                </figure>
+            </section>
+        </div>
+    </main>
+    <footer id="piedepagina" >
+        <div id="seccionespie" >
+            <section class="seccionpie" >
+                <h2>Sitio Web</h2>
+                <p><a href="../index.html" >Principal</a></p>
+                <p><a href="../Paginas/soporte.html" >Soporte</a></p>
+            </section>
+            <section class="seccionpie" >
+                <h2>Ayuda</h2>
+                <p><a href="../Paginas/contacto.html" >Contacto</a></p>
+                <address id="correo">Correo: </address>
+            </section>
+            <section class="seccionpie" >
+                <h2>Info</h2>
+                <address>
+                    <p>Ciudad Autónoma de Buenos Aires, Argentina</p>
+                </address>
+                <p>&copy; Derechos Reservados 2026</p>
+            </section>
+        </div>
+    </footer>
+</body>
+</html>

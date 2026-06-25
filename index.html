@@ -2,6 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
+  <link rel="icon" href="./imagenes/logo-mg.svg" type="image/svg+xml">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- SEO -->
@@ -30,9 +31,9 @@
   <header>
     <nav class="navbar navbar-expand-lg mg-nav sticky-top">
       <div class="container">
-        <a class="navbar-brand marca" href="./index.html">⟢ Mundo Gaming</a>
+        <a class="navbar-brand marca d-flex align-items-center gap-2" href="./index.html"><img src="./imagenes/logo-mg.svg" alt="" width="36" height="26"><span>Mundo Gaming</span></a>
 
-        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse"
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#menuPrincipal" aria-controls="menuPrincipal"
                 aria-expanded="false" aria-label="Abrir menú">
           <span class="navbar-toggler-icon"></span>
@@ -49,6 +50,7 @@
 
           <div class="d-flex align-items-center gap-3">
             <!-- Estado deslogueado -->
+            <span id="tc-dolar" class="mg-tc d-none" title="Dólar oficial">💵 USD <span class="tc-valor">—</span></span>
             <span id="nav-sesion">
               <a class="nav-link d-inline" href="./Paginas/ingresar.html">Ingresar</a>
             </span>
@@ -257,7 +259,8 @@
           <span>Total</span>
           <span id="total-carrito">$0.00</span>
         </div>
-        <button id="btn-comprar" class="btn btn-acento w-100">Simular compra</button>
+        <button id="btn-comprar" class="btn btn-acento w-100 mb-2">Simular compra</button>
+        <button id="btn-vaciar" class="btn btn-outline-danger w-100">Borrar carrito</button>
       </div>
     </div>
   </div>
@@ -291,6 +294,7 @@
   <script src="./JS/auth.js"></script>
   <script src="./JS/carrito.js"></script>
   <script src="./JS/productos-data.js"></script>
+  <script src="./JS/tc.js"></script>
   <script src="./JS/app.js"></script>
 </body>
 </html>

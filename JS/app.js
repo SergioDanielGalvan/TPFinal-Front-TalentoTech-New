@@ -263,6 +263,11 @@ function initContacto() {
   if (form) ligarContacto(form);
 }
 
+function initSoporte() {
+  const form = document.getElementById("formDatosSoporte");
+  if (form) ligarContacto(form); // misma validación + envío por Formspree
+}
+
 /* ---------------- Arranque común ---------------- */
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -294,10 +299,27 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  // Botón "Borrar carrito".
+  const btnVaciar = document.getElementById("btn-vaciar");
+  if (btnVaciar) {
+    btnVaciar.addEventListener("click", async () => {
+      const items = await DB.obtenerCarrito();
+      if (items.length === 0) {
+        mostrarToast("El carrito ya está vacío.");
+        return;
+      }
+      if (confirm("¿Seguro que querés borrar todo el carrito?")) {
+        await Carrito.vaciar();
+        mostrarToast("Carrito vaciado.");
+      }
+    });
+  }
+
   // Init por página según los elementos presentes.
   if (document.getElementById("grilla-productos")) initInicio();
   if (document.getElementById("formIngresar")) initLogin();
   if (document.getElementById("formRegistrarse")) initRegistro();
   if (document.getElementById("formContacto") && !document.getElementById("grilla-productos"))
     initContacto();
+  if (document.getElementById("formDatosSoporte")) initSoporte();
 });

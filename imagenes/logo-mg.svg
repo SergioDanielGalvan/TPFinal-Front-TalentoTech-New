@@ -1,0 +1,19 @@
+<svg width="100" height="72" viewBox="0 0 100 72" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Mundo Gaming">
+  <!-- Cuerpo del control -->
+  <path d="M50,14 C42,13 34,13 28,16 C20,20 12,26 9,36 C6,46 8,56 16,61
+           C23,65 31,63 36,57 C40,52 44,49 50,49 C56,49 60,52 64,57
+           C69,63 77,65 84,61 C92,56 94,46 91,36 C88,26 80,20 72,16
+           C66,13 58,13 50,14 Z"
+        fill="#3b4570" stroke="#222a47" stroke-width="3" stroke-linejoin="round"/>
+  <!-- Brillo superior sutil -->
+  <path d="M50,17 C42,16 34,16.5 29,19 C40,17.5 60,17.5 71,19 C66,16.5 58,16 50,17 Z"
+        fill="#ffffff" opacity="0.12"/>
+  <!-- Cruceta (D-pad) -->
+  <rect x="27.5" y="29" width="9" height="22" rx="2.5" fill="#ffffff"/>
+  <rect x="21" y="35.5" width="22" height="9" rx="2.5" fill="#ffffff"/>
+  <!-- Botones de acción -->
+  <circle cx="68" cy="29" r="5" fill="#fbbf24"/>
+  <circle cx="79" cy="40" r="5" fill="#ef4444"/>
+  <circle cx="68" cy="51" r="5" fill="#22d3ee"/>
+  <circle cx="57" cy="40" r="5" fill="#d946ef"/>
+</svg>

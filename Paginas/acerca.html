@@ -2,6 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
+  <link rel="icon" href="../imagenes/logo-mg.svg" type="image/svg+xml">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Acerca · Mundo Gaming</title>
   <meta name="description" content="Quiénes somos: resellers de hardware gamer con más de 10 años de trayectoria. Showroom y venta al público y al gremio.">
@@ -15,8 +16,8 @@
   <header>
     <nav class="navbar navbar-expand-lg mg-nav sticky-top">
       <div class="container">
-        <a class="navbar-brand marca" href="../index.html">⟢ Mundo Gaming</a>
-        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse"
+        <a class="navbar-brand marca d-flex align-items-center gap-2" href="../index.html"><img src="../imagenes/logo-mg.svg" alt="" width="36" height="26"><span>Mundo Gaming</span></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#menuPrincipal" aria-label="Abrir menú">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -28,6 +29,7 @@
             <li class="nav-item"><a class="nav-link active" href="./acerca.html">Acerca</a></li>
           </ul>
           <div class="d-flex align-items-center gap-3">
+            <span id="tc-dolar" class="mg-tc d-none" title="Dólar oficial">💵 USD <span class="tc-valor">—</span></span>
             <span id="nav-sesion"><a class="nav-link d-inline" href="./ingresar.html">Ingresar</a></span>
             <span id="nav-usuario" class="d-none d-flex align-items-center gap-2">
               <span class="text-suave small">Hola, <strong id="nav-nombre" class="text-white"></strong></span>
@@ -52,8 +54,7 @@
         <div class="row g-4 align-items-center mt-2">
           <div class="col-12 col-lg-6">
             <div class="d-flex align-items-center gap-3 mb-3">
-              <img src="../imagenes/logo.png" alt="Logo Mundo Gaming"
-                   width="80" style="border-radius:10px;">
+              <img src="../imagenes/logo-mg.svg" alt="Mundo Gaming" width="88" height="63">
               <h2 class="h4 mb-0">Mundo Gaming</h2>
             </div>
             <p>Somos resellers de las principales marcas de informática y
@@ -116,7 +117,8 @@
       <div id="lista-carrito" class="flex-grow-1"></div>
       <div class="pt-3 mt-3 border-top" style="border-color: var(--borde) !important;">
         <div class="carrito-total mb-3"><span>Total</span><span id="total-carrito">$0.00</span></div>
-        <button id="btn-comprar" class="btn btn-acento w-100">Simular compra</button>
+        <button id="btn-comprar" class="btn btn-acento w-100 mb-2">Simular compra</button>
+        <button id="btn-vaciar" class="btn btn-outline-danger w-100">Borrar carrito</button>
       </div>
     </div>
   </div>
@@ -147,6 +149,7 @@
   <script src="../JS/db.js"></script>
   <script src="../JS/auth.js"></script>
   <script src="../JS/carrito.js"></script>
+  <script src="../JS/tc.js"></script>
   <script src="../JS/app.js"></script>
 </body>
 </html>

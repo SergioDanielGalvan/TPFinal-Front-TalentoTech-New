@@ -1,22 +1,47 @@
 /* ============================================================
-   carrito.js  ·  Carrito de compras dinámico
+   carrito.js  ·  Carrito de compras dinámico (por usuario)
    ------------------------------------------------------------
-   - Persiste en IndexedDB (store "carrito") -> sobrevive a
-     recargas y cierres del navegador.
+   - Persiste en IndexedDB (store "carrito") asociado al
+     usuario logueado -> cada cuenta tiene su propio carrito.
+   - Sin sesión activa, el carrito se muestra vacío (el badge
+     no arrastra ítems de un usuario que ya cerró sesión).
    - Contador en tiempo real en la NavBar.
    - Vista en offcanvas de Bootstrap con edición de cantidades,
      eliminación de productos y total dinámico.
    ============================================================ */
 
 const Carrito = {
+  /**
+   * Devuelve el identificador del usuario logueado (su correo)
+   * o null si no hay sesión.
+   *
+   * ⚠️ IMPORTANTE: esta lectura debe coincidir con cómo guardás
+   * la sesión en auth.js. Acá se asume sessionStorage bajo la
+   * clave "sesion" con un objeto que tiene { correo }. Si usás
+   * otra clave u otro campo, ajustá solo estas líneas.
+   */
+  usuarioActual() {
+    const raw = sessionStorage.getItem("sesion");
+    if (!raw) return null;
+    try {
+      return JSON.parse(raw).correo || null;
+    } catch {
+      return raw; // por si guardás el correo como string plano
+    }
+  },
+
   /** Suma un producto al carrito (o incrementa su cantidad). */
   async agregar(producto) {
-    const existente = await DB.obtenerItem(producto.id);
+    const usuarioId = this.usuarioActual();
+    if (!usuarioId) return; // sin sesión no hay carrito
+
+    const existente = await DB.obtenerItem(usuarioId, producto.id);
     if (existente) {
       existente.cantidad += 1;
       await DB.guardarItem(existente);
     } else {
       await DB.guardarItem({
+        usuarioId,
         id: producto.id,
         titulo: producto.titulo,
         precio: producto.precio,
@@ -30,11 +55,14 @@ const Carrito = {
 
   /** Cambia la cantidad de un item. Si llega a 0, lo elimina. */
   async cambiarCantidad(id, delta) {
-    const item = await DB.obtenerItem(id);
+    const usuarioId = this.usuarioActual();
+    if (!usuarioId) return;
+
+    const item = await DB.obtenerItem(usuarioId, id);
     if (!item) return;
     item.cantidad += delta;
     if (item.cantidad <= 0) {
-      await DB.eliminarItem(id);
+      await DB.eliminarItem(usuarioId, id);
     } else {
       await DB.guardarItem(item);
     }
@@ -42,12 +70,16 @@ const Carrito = {
   },
 
   async eliminar(id) {
-    await DB.eliminarItem(id);
+    const usuarioId = this.usuarioActual();
+    if (!usuarioId) return;
+    await DB.eliminarItem(usuarioId, id);
     await this.refrescar();
   },
 
   async vaciar() {
-    await DB.vaciarCarrito();
+    const usuarioId = this.usuarioActual();
+    if (!usuarioId) return;
+    await DB.vaciarCarrito(usuarioId);
     await this.refrescar();
   },
 
@@ -61,11 +93,22 @@ const Carrito = {
     return items.reduce((acc, i) => acc + i.cantidad, 0);
   },
 
-  /** Lee el carrito y vuelve a dibujar contador + lista. */
+  /** Lee el carrito del usuario activo y vuelve a dibujar contador + lista. */
   async refrescar() {
-    const items = await DB.obtenerCarrito();
+    const usuarioId = this.usuarioActual();
+    const items = usuarioId ? await DB.obtenerCarrito(usuarioId) : [];
     this.pintarContador(items);
     this.pintarLista(items);
+  },
+
+  /**
+   * Llamar desde el logout (auth.js): limpia el badge y la vista
+   * SIN borrar datos. El carrito queda guardado para cuando el
+   * usuario vuelva a iniciar sesión.
+   */
+  alCerrarSesion() {
+    this.pintarContador([]);
+    this.pintarLista([]);
   },
 
   pintarContador(items) {
